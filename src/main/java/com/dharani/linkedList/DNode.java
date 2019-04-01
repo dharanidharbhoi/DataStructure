@@ -1,4 +1,4 @@
-package com.dharani.LinkedList;
+package com.dharani.linkedList;
 
 public class DNode<E> {
 

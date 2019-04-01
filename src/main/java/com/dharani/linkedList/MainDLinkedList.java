@@ -1,4 +1,6 @@
-package com.dharani.LinkedList;
+package com.dharani.linkedList;
+
+import java.util.LinkedList;
 
 public class MainDLinkedList {
 
@@ -10,7 +12,9 @@ public class MainDLinkedList {
 		intLinkedList.add(2);
 		intLinkedList.add(3);
 		intLinkedList.add(4);
-		intLinkedList.PrintAllNode();
+		intLinkedList.printAllNode();
+		
+		LinkedList<String> list = new LinkedList<String>() ;
 	}
 
 }

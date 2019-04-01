@@ -1,4 +1,4 @@
-package com.dharani.LinkedList;
+package com.dharani.linkedList;
 
 /**
  * This is Normal Linked List where user can add , delete and reverse the node
@@ -13,8 +13,8 @@ public class DLinkedList<E> {
 	public void add(E value) {
 
 		if (startNode == null) {
-			startNode = new DNode<E>(value, null, null);
-			return ;
+			startNode = new DNode<>(value, null, null);
+			return;
 		}
 
 		addNextNode(value, startNode);
@@ -24,17 +24,17 @@ public class DLinkedList<E> {
 	private void addNextNode(E value, DNode<E> node) {
 
 		if (node.nextNode == null) {
-			DNode<E> newNode = new DNode<E>(value, node, null);
+			DNode<E> newNode = new DNode<>(value, node, null);
 			node.nextNode = newNode;
 			return;
 		}
-		node.prevNode = node ;
+		node.prevNode = node;
 		node = node.nextNode;
 		addNextNode(value, node);
 
 	}
 
-	public void PrintAllNode() {
+	public void printAllNode() {
 		printNode(startNode);
 	}
 
