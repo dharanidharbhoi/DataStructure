@@ -1,5 +1,7 @@
 package com.dharani.tree;
 
+import java.util.Stack;
+
 public class BinarySearchTree {
 
 	
@@ -94,6 +96,28 @@ public class BinarySearchTree {
 	return	lengthOfTree(node.left, ++length);
 		
 	}
+
+	public void printInorderTravsersalWithOutRecursion() {
+		
+		Stack<Node> stack = new Stack<>();
+		Node currentNode = root;
+		
+		while(currentNode != null ||   (stack.size() > 0)) {
+			
+			while(currentNode != null) {
+				stack.push(currentNode);
+				currentNode = currentNode.left;				
+			}
+			
+			currentNode = stack.pop();
+			System.out.print(currentNode.value + " ");
+			currentNode = currentNode.right;
+			
+		}
+		
+	}
+
+
 	
 	
 }

@@ -15,7 +15,9 @@ public class TestBinarySearchTree {
           bst.insert(16);
           System.out.println("Print BST in Inorder");
           bst.printInOrderTraversal();
-          System.out.println("Print BST in preOrder");
+         System.out.println();
+         System.out.println("Pring BST in Inorder without recursion");
+         bst.printInorderTravsersalWithOutRecursion();
           
           
 	}
