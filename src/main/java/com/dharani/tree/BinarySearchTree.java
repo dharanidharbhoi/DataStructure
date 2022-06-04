@@ -23,9 +23,9 @@ public class BinarySearchTree {
 			 node = new Node(value);
 			 return node ;
 		 }
-		if(node.value > value) {
+		if(node.data > value) {
 			node.left = insertNode(node.left, value);
-		}else if(node.value < value){
+		}else if(node.data < value){
 			node.right = insertNode(node.right , value);
 		}
 	
@@ -38,7 +38,7 @@ public class BinarySearchTree {
 	
 	private void printPreOrder(Node node) {
 		 
-			 System.out.print(node.value + "  ");
+			 System.out.print(node.data + "  ");
 		if(node.left != null) {
 			printPreOrder(node.left);
 		}
@@ -58,12 +58,14 @@ public class BinarySearchTree {
 		  if(node.left != null) {
 			  printInOrder(node.left);
 		  }
-		  System.out.print(node.value +" ");
+		  System.out.print(node.data +" ");
 		  if(node.right != null) {
 			  printInOrder(node.right);
 		  }
 	}
 	
+	
+
 
 
 	public void printPostOrderTraversal(){
@@ -77,7 +79,7 @@ public class BinarySearchTree {
 		if(node.right != null) {
 			printPostOrder(node.right);
 		}
-		System.out.print(node.value +"  ");
+		System.out.print(node.data +"  ");
 
 	}
 	
@@ -110,7 +112,7 @@ public class BinarySearchTree {
 			}
 			
 			currentNode = stack.pop();
-			System.out.print(currentNode.value + " ");
+			System.out.print(currentNode.data + " ");
 			currentNode = currentNode.right;
 			
 		}
