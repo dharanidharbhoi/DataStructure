@@ -3,10 +3,14 @@ package com.dharani.problems;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class StreamMain {
 
@@ -65,13 +69,14 @@ public class StreamMain {
 		
 	//reduce 
 	Student s = 	sortedList.stream().reduce((student1,student2) -> student1.id > student2.id ? student1 : student2).orElse(new Student(1, "default"));
-//	System.out.println(s.id + "" + s.name);
+	System.out.println(s.id + "" + s.name);
 	
 	//Min & Max
 	Student  minStud =  sortedList.stream().min(studentComparator).orElse(new Student(-1,"NoName"));
 //	 System.out.println(minStud.id + " " + minStud.name); 
 	 
 	 Student maxStud =  sortedList.stream().max(studentComparator).orElse(new Student(-1,"NoName"));
+	 Student max1 =  sortedList.stream().max( (o1,o2) -> o1.name.compareTo(o2.name)).orElse(null);
 //	 System.out.println(maxStud.id + " " + maxStud.name); 
 	 
 	// System.out.println(sortedList.stream().count());
@@ -95,7 +100,8 @@ public class StreamMain {
 	 Optional<Student> optStudent = Optional.of(s1);
 	 
 	
-	 
+	 Map<String,String> map = new HashMap<>();
+	 map.put("1", "One");
 	 
 
 	}

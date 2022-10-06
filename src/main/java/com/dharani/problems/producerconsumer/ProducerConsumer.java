@@ -8,11 +8,10 @@ public class ProducerConsumer {
 	private static List<Integer> list = new ArrayList<>();
 
 	private int value = 0;
-	
-	
+
 	public synchronized void produce() {
-		
-		while (true) {
+
+		while (value < 20) {
 			if (!list.isEmpty()) {
 				try {
 					wait();
@@ -28,15 +27,14 @@ public class ProducerConsumer {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
-			} 
+			}
 		}
-		
-		
+
 	}
-	
+
 	public synchronized void consume() {
-		
-		while (true) {
+
+		while (value < 20) {
 			if (list.isEmpty()) {
 				try {
 					wait();
@@ -51,10 +49,9 @@ public class ProducerConsumer {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
-			} 
+			}
 		}
-		
-		
+
 	}
-	
+
 }

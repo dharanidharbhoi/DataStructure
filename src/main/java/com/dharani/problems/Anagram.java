@@ -40,4 +40,28 @@ public class Anagram {
 		
 	}
 
+	
+	private static boolean isAnagram2(String a, String b) {
+		   a = a.toLowerCase();
+		   b = b.toLowerCase();
+		 if(a.length() != b.length()) {
+			 return false;
+		 }
+		 int[] freq_a = new int[26];
+		 int[] freq_b = new int[26];
+		 
+		 for(int i=0;i<a.length();i++) {
+			 freq_a[a.charAt(i) - 'a']++;
+			 freq_a[b.charAt(i) - 'a']--;
+		 }
+		 
+		 for(int i=0;i<a.length();i++) {
+			 if(freq_a[a.charAt(i)-'a'] != freq_b[a.charAt(i)-'a'] ) {
+				 return false;
+			 }
+		 }
+		
+		return true;
+		
+	}
 }
